@@ -13,7 +13,7 @@ import pages.LoginPage;
 import pages.NewAccountPage;
 import pages.TestBase;
 
-public class NewAccountStepConfigration extends TestBase {
+public class NewAccountStepDefinition extends TestBase {
 
 	LoginPage loginPage;
 	DashBoardPage dashboardPage;
