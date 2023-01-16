@@ -139,7 +139,8 @@ public class NewAccountStepConfigration extends TestBase {
 
 	@Then("^User should be able to validate account created successfully$")
 	public void user_should_be_able_to_validate_account_created_successfully() {
-		//newaccountPage.validateAccountCreated();
+//		boolean result=newaccountPage.validateAccountCreated();
+//		Assert.assertTrue("Account Not Created", result);
 		String expectedText="Account Created Successfully";
 		String actualText=newaccountPage.getMessage();
 		Assert.assertTrue("Account Not Created", actualText.contains(expectedText));
