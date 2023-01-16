@@ -31,7 +31,7 @@ public class NewAccountPage {
 	WebElement SUBMIT_BUTTON_ELEMENT;
 	@FindBy(how = How.XPATH, using = "//tbody/tr/td[1]")
 	List<WebElement> LISTOFACCOUNTS_ELEMENT;
-	@FindBy(how= How.XPATH , using="//div[@id='page-wrapper']/div[3]/div[1]") 
+	@FindBy(how = How.XPATH, using = "//div[@id='page-wrapper']/div[3]/div[1]")
 	WebElement MESSAGE_ELEMENT;
 
 	public NewAccountPage(WebDriver driver) {
@@ -125,7 +125,11 @@ public class NewAccountPage {
 		}
 	}
 
-	/*Validating that the new customer added is in  List Of Accounts table
+	
+	// Validating that account has been created(2 ways):
+
+	/*
+	 * 1.Validating that the new customer added is in List Of Accounts table
 	 * 
 	 * When a new account is created it gets added at the bottom of accounts table
 	 * on this page hence we are getting all the names from the table in a list and
@@ -134,22 +138,23 @@ public class NewAccountPage {
 	 * size=LISTOFACCOUNTS_ELEMENT.size()-1;-->since size or no of entries will be
 	 * size -1 because list index starts at 0. in for loop we are starting from last
 	 * entry upto last entry-10(last 10 entries)
-	 * 
-	 * public boolean validateAccountCreated() { 
-	 * boolean match = false;// for assertion on NewAccountStepDefinition.java class
-	 * int size = LISTOFACCOUNTS_ELEMENT.size() - 1; 
-	 * for (int i = size; i >= size -10; i--) { 
-	 * if(uniqueName.equalsIgnoreCase(LISTOFACCOUNTS_ELEMENT.get(i).getText())) {
-	 * match = true; break; 
-	 * } 
-	 * } 
-	 * return match;
-	 * }
 	 */
-	
-	//Validating by seeing the success message that "account created successfully"
+
+	public boolean validateAccountCreated() {
+		boolean match = false;// for assertion on NewAccountStepDefinition.java class
+		int size = LISTOFACCOUNTS_ELEMENT.size() - 1;
+		for (int i = size; i >= size - 10; i--) {
+			if (uniqueName.equalsIgnoreCase(LISTOFACCOUNTS_ELEMENT.get(i).getText())) {
+				match = true;
+				break;
+			}
+		}
+		return match;
+	}
+
+	// 2.Validating by seeing the success message that "account created successfully"
 	public String getMessage() {
-		String message=MESSAGE_ELEMENT.getText();
+		String message = MESSAGE_ELEMENT.getText();
 		return message;
 	}
 
