@@ -33,11 +33,13 @@ public class NewAccountStepDefinition extends TestBase {
 	}
 
 	@When("^User enters the \"([^\"]*)\" in the \"([^\"]*)\" field$")
-	public void user_enters_the_in_the_field(String username_OR_password, String field) {
+	public void user_enters_the_in_the_field(String userInfo, String field) {
 		if (field.equalsIgnoreCase("username")) {
-			loginPage.enterUserName(username_OR_password);
+			loginPage.enterUserName(userInfo);
 		} else if (field.equalsIgnoreCase("password")) {
-			loginPage.enterPassword(username_OR_password);
+			loginPage.enterPassword(userInfo);
+		} else{
+			System.out.println("Entered information "+userInfo+" is invalid");
 		}
 	}
 
@@ -52,6 +54,8 @@ public class NewAccountStepDefinition extends TestBase {
 			dashboardPage.clickOnNewAccount();
 		} else if (button.equalsIgnoreCase("submit")) {
 			newaccountPage.clickOnSubmitButton();
+		} else {
+			System.out.println("Button: "+button+" does not exist");
 		}
 
 		// switch case
@@ -90,26 +94,24 @@ public class NewAccountStepDefinition extends TestBase {
 		} 
 		else if (field.equalsIgnoreCase("description")) {
 			newaccountPage.enterDescription(textEntry);
-		} 
-		else if (field.equalsIgnoreCase("initialBalance")) {
+		} else if (field.equalsIgnoreCase("initialBalance")) {
 			newaccountPage.enterInitialBalance(textEntry);
-		} 
-		else if (field.equalsIgnoreCase("accountNumber")) {
+		} else if (field.equalsIgnoreCase("accountNumber")) {
 			newaccountPage.enterAccountNumber(textEntry);
-		} 
-		else if (field.equalsIgnoreCase("contactPerson")) {
+		} else if (field.equalsIgnoreCase("contactPerson")) {
 			newaccountPage.enterContactPerson(textEntry);
-		} 
-		else if (field.equalsIgnoreCase("Phone")) {
+		} else if (field.equalsIgnoreCase("Phone")) {
 			newaccountPage.enterContactPersonPhone(textEntry);
-		} 
-		else if (field.equalsIgnoreCase("internetBankingURL")) {
+		} else if (field.equalsIgnoreCase("internetBankingURL")) {
 			newaccountPage.enterInternetBankingURL(textEntry);
+		} else {
+			System.out.println("Entered text :"+textEntry+" is invalid");
 		}
 
 		// switch case
 		/*
-		 * switch (field.toUpperCase()) { 
+		 * switch (field.toUpperCase()) 
+		 * { 
 		 * case "ACCOUNTTITLE":
 		 * newaccountPage.enterAccountTitle(textEntry); 
 		 * break; 
@@ -118,7 +120,7 @@ public class NewAccountStepDefinition extends TestBase {
 		 * break; 
 		 * case "INITIALBALANCE":
 		 * newaccountPage.enterInitialBalance(textEntry); 
-		 * break; 
+		 * break;
 		 * case "ACCOUNTNUMBER":
 		 * newaccountPage.enterAccountNumber(textEntry); 
 		 * break; 
@@ -128,12 +130,11 @@ public class NewAccountStepDefinition extends TestBase {
 		 * case "PHONE":
 		 * newaccountPage.enterContactPersonPhone(textEntry); 
 		 * break; 
-		 * case "INTERNETBANKINGURL": newaccountPage.enterInternetBankingURL(textEntry);
-		 * break; 
+		 * case "INTERNETBANKINGURL": 
+		 * newaccountPage.enterInternetBankingURL(textEntry);
+		 * break;
 		 * 
-		 * default:
-		 * System.out.println("Invalid entry");
-		 * }
+		 * default: System.out.println("Invalid entry"); }
 		 */
 	}
 
@@ -141,12 +142,11 @@ public class NewAccountStepDefinition extends TestBase {
 	public void user_should_be_able_to_validate_account_created_successfully() {
 //		boolean result=newaccountPage.validateAccountCreated();
 //		Assert.assertTrue("Account Not Created", result);
-		String expectedText="Account Created Successfully";
-		String actualText=newaccountPage.getMessage();
+		String expectedText = "Account Created Successfully";
+		String actualText = newaccountPage.getMessage();
 		Assert.assertTrue("Account Not Created", actualText.contains(expectedText));
-	
+
 	}
-	
 
 	@After
 	public void tearDown() {
