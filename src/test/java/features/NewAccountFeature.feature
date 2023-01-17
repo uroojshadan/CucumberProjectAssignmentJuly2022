@@ -24,5 +24,5 @@ Feature: Techfios bank and cash New Account Functionality
     Then User should be able to validate account created successfully
 
     Examples: 
-      | username          | password | accountTitle | description    | initialBalance | accountNumber | contactPerson | Phone        | internetBankingURL                      |
+      | username          | password | accountTitle | description     | initialBalance | accountNumber | contactPerson | Phone        | internetBankingURL                      |
       | demo@techfios.com | abc123   | Savings      | Savings Account |        2400000 |          4532 | New Account   | 456-378-1900 | https://techfios.com/billing/?ng=admin/ |
