@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class NewAccountPage {
+public class NewAccountPage extends TestBase{
 	WebDriver driver;
 
 	@FindBy(how = How.XPATH, using = "//div/h5[text()='Add New Account']")
@@ -38,13 +38,7 @@ public class NewAccountPage {
 		this.driver = driver;
 	}
 
-	public int generateRandomNumber(int boundaryNo) {
-		Random rn = new Random();
-		int randomNo = rn.nextInt(boundaryNo);
-		return randomNo;
-
-	}
-
+	
 	String uniqueName;
 
 	public void enterAccountTitle(String name) {
