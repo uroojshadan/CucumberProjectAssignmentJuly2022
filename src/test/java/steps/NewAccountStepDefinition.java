@@ -60,17 +60,17 @@ public class NewAccountStepDefinition extends TestBase {
 
 		// switch case
 		/*
-		 * switch(button.toUpperCase()) { 
-		 * case "SIGNIN":
+		 * switch(button) { 
+		 * case "signIn":
 		 * loginPage.clickOnSignInButton(); 
 		 * break; 
-		 * case "BANKCASH":
+		 * case "bankCash":
 		 * dashboardPage.clickOnBankAndCash(); 
 		 * break; 
-		 * case "NEWACCOUNT":
+		 * case "newAccount":
 		 * dashboardPage.clickOnNewAccount(); 
 		 * break; 
-		 * case "SUBMIT":
+		 * case "submit":
 		 * newaccountPage.clickOnSubmitButton(); 
 		 * break; 
 		 * default:
@@ -110,31 +110,31 @@ public class NewAccountStepDefinition extends TestBase {
 
 		// switch case
 		/*
-		 * switch (field.toUpperCase()) 
+		 * switch (field) 
 		 * { 
-		 * case "ACCOUNTTITLE":
+		 * case "accountTitle":
 		 * newaccountPage.enterAccountTitle(textEntry); 
 		 * break; 
-		 * case "DESCRIPTION":
+		 * case "description":
 		 * newaccountPage.enterDescription(textEntry); 
 		 * break; 
-		 * case "INITIALBALANCE":
+		 * case "initialBalance":
 		 * newaccountPage.enterInitialBalance(textEntry); 
 		 * break;
-		 * case "ACCOUNTNUMBER":
+		 * case "accountNumber":
 		 * newaccountPage.enterAccountNumber(textEntry); 
 		 * break; 
-		 * case "CONTACTPERSON":
+		 * case "contactPerson":
 		 * newaccountPage.enterContactPerson(textEntry); 
 		 * break; 
-		 * case "PHONE":
+		 * case "Phone":
 		 * newaccountPage.enterContactPersonPhone(textEntry); 
 		 * break; 
-		 * case "INTERNETBANKINGURL": 
+		 * case "internetBankingURL": 
 		 * newaccountPage.enterInternetBankingURL(textEntry);
 		 * break;
 		 * 
-		 * default: System.out.println("Invalid entry"); }
+		 * default: System.out.println("Invalid field"); }
 		 */
 	}
 
